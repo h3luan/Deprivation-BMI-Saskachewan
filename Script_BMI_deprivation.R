@@ -135,24 +135,3 @@ init2 <- list(alpha=-3,beta=rep(-0.2,betaNum),sd.u1=0.1,sd.u2=1,sd.u3=0.1,u2=rep
 inits.sim <- list(init1,init2)
 
 sim <- bugs(data = data.sim, inits = inits.sim, parameters.to.save = parameters_monitor, model.file = "model.txt", n.chains=2, n.iter=10000, n.burnin=0, n.thin=1, codaPkg = FALSE, debug=TRUE, DIC=FALSE, bugs.directory = "C:/Program Files (x86)/WinBUGS14", working.directory=getwd(), save.history=FALSE)
-
-# filter_dat <- filter(final_dat,final_dat$incomecat==3)
-# mean(filter_dat$BMI)
-# sd(filter_dat$BMI)
-# filter_dat1 <- filter(filter_dat,percentactive==0)
-# filter_dat2 <- filter(filter_dat,percentactive<1 & percentactive>0)
-# filter_dat3 <- filter(filter_dat,percentactive==1)
-# dim(filter_dat1)[1]/dim(filter_dat)[1]
-# dim(filter_dat2)[1]/dim(filter_dat)[1]
-# dim(filter_dat3)[1]/dim(filter_dat)[1]
-# dim(filter_dat)[1]
-# dim(filter_dat)[1]/dim(final_dat)[1]
-summary(lm(Y~AGE2+AGE3+AGE4))
-summary(lm(Y~fit_cat))
-summary(lm(Y~TRANS_CAT2+TRANS_CAT3))
-summary(lm(Y~INCOME2+INCOME3+INCOME4))
-summary(lm(Y~child))
-summary(lm(Y~DEPRI2+DEPRI3+DEPRI4+DEPRI5))
-summary(lm(Y~popDen))
-summary(lm(Y~roadCen))
-
